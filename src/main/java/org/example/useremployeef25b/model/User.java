@@ -12,13 +12,15 @@ public class User {
     private String email;
     private String password;
 
-    public User() {
+    @OneToOne(mappedBy = "user")
+    private Employee employee;
+
+    public Employee getEmployee() {
+        return employee;
     }
 
-    public User(int userID, String email, String password) {
-        this.userID = userID;
-        this.email = email;
-        this.password = password;
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 
     public int getUserID() {
